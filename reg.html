@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        #reg{
+            width: 420px;
+            height: 480px;
+            margin: 0 auto;
+        }
+        .reg .reg-head h3{
+            text-align: center
+        }
+        .reg .reg-head p{
+            font-size: 10px
+        }
+        li{
+            list-style-type: none;
+        }
+        .reg-phone,.reg-upwd{
+            width: 416px;
+            height:46px;
+            text-indent: 15px;
+            font-size: 14px;
+        }
+        .my-ul{
+            padding: 0
+        }
+        #reg-email{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .reg-btn{
+            width: 420px;
+            height: 46px;
+            background-color: #111111;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            border: none;
+            margin-top:15px ;
+            margin-bottom: 15px;
+        }
+        .login-a{
+            text-decoration: none;
+            color: #111111;
+            font-size: 8px
+        }
+        .my-ul{
+            width: 420px ;
+        }
+        .my-ulFont{
+            font-size: 8px;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <div id="reg">
+        <div class="reg-head">
+            <h3>现在就加入乌托家</h3>
+            <p>发现灵感，搜集所爱，美好家居就从这里开始。现在就登录乌托家搭建您心仪的家吧！</p>
+            <p>手机账户注册</p>
+        </div>
+        <ul class="my-ul">
+            <li>
+                <input type="text" class="reg-phone" placeholder="请输入您的手机号" v-model="phone" @blur="checkPhone()">
+                <span>{{msgphone}}</span>
+            </li>
+            <li>
+                <input type="text" id="reg-email" class="reg-phone" placeholder="请输入您需要注册的邮箱" v-model="email" @blur="checkemail()">
+                <span>{{msgemail}}</span>
+            </li>
+            <li>
+                    <input type="password" class="reg-upwd" placeholder="请输入您需要注册的密码" v-model="upwd" @blur="checkpassword()">
+                    <span>{{msgupwd}}</span>
+            </li>
+            <li>
+                    <a href="#"> <input type="submit" class="reg-btn" value="登录"></a>
+            </li>
+            <li align="center">
+                    <span class="my-ulFont">我已有账号</span>
+                    <a href="" class="login-a"><span>立即登录</span></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vew=new Vue({
+            el:"#reg",
+            data:{
+                phone:"",
+                email:"",
+                upwd:"",
+            },
+          
+           
+        })
+    </script>
+</form>
+</body>
+</html>
